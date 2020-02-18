@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.PersonInfoDao">
+    <insert id="addBean">
+        insert into person_info (
+        name,
+        sex,
+        age,
+        mobile,
+        status
+        ) values (
+            #{name},
+            #{sex},
+            #{age},
+            #{mobile},
+            #{status}
+        )
+    </insert>
+
+    <select id="queryList" resultType="PersonInfo">
+        SELECT * FROM person_info WHERE status = 1
+    </select>
+</mapper>
